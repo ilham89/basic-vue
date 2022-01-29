@@ -1,19 +1,13 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-
-  <Logos />
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/profile">Profile</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view />
+  </div>
 </template>
-
-<script>
-import Logos from "./components/Logos.vue";
-
-export default {
-  name: "App",
-  components: {
-    Logos,
-  },
-};
-</script>
 
 <style>
 #app {
@@ -23,5 +17,18 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: blue;
+}
+
+#nav a.router-link-exact-active {
+  color: green;
 }
 </style>
